@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query By Country AND College and Team </title>
+    <div>
+        <a href="http://127.0.0.1:5000/query" >NBA QUERY</a>
+    </div>
+</head>
+<body>
+    <h1>Query By Country College and Team</h1>
+    {% for item in oggetto %}
+            <li>Id: {{ item.id }}</li>
+            <li>Player Name: {{ item.player_name }}</li>
+            <li>Team Abbreviation: {{ item.team_abbreviation }}</li>
+            <li>Age: {{ item.age }}</li>
+            <li>Player Height: {{ item.player_height }}</li>
+            <li>Player Weight: {{ item.player_weight }}</li>
+            <li>College: {{ item.college }}</li>
+            <li>Country: {{ item.country }}</li>
+            <li>Draft Year: {{ item.draft_year }}</li>
+            <li>Draft Round: {{ item.draft_round }}</li>
+            <li>Draft Number: {{ item.draft_number }}</li>
+            <li>GP: {{ item.gp }}</li>
+            <li>PTS: {{ item.pts }}</li>
+            <li>REB: {{ item.reb }}</li>
+            <li>Net Rating: {{ item.net_rating }}</li>
+            <li>OREB PCT: {{ item.oreb_pct }}</li>
+            <li>DREB PCT: {{ item.dreb_pct }}</li>
+            <li>USG PCT: {{ item.usg_pct }}</li>
+            <li>TS PCT: {{ item.ts_pct }}</li>
+            <li>AST PCT: {{ item.ast_pct }}</li>
+            <li>Season: {{ item.season }}</li>
+            <li>PST: {{ item.pst }}</li>
+        
+        <br>
+    {% endfor %}
+</body>
+</html>

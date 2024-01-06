@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Stili per il layout della pagina */
+        body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+        }
+    
+        header {
+          background-color: #1b2d5e;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+        }
+    
+        nav {
+          background-color: #0c1c3d;
+          display: flex;
+          justify-content: center;
+          padding: 10px;
+        }
+    
+        nav a {
+          color: #fff;
+          margin: 0 10px;
+          text-decoration: none;
+        }
+    
+        main {
+          padding: 20px;
+        }
+    
+        footer {
+          background-color: #0c1c3d;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+        }
+    
+        #root {
+          padding: 20px;
+        }
+    
+        h1, h2, h3 {
+          color: #1b2d5e;
+        }
+    
+        ul {
+          list-style: none;
+          padding: 0;
+        }
+    
+        li {
+          margin-bottom: 10px;
+        }
+    
+        button {
+          background-color: #1b2d5e;
+          color: #fff;
+          border: none;
+          padding: 8px 12px;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+        }
+    
+        button:hover {
+          background-color: #0c1c3d;
+        }
+    
+        input[type="text"] {
+          padding: 8px;
+          border: 1px solid #ccc;
+        }
+      </style>
+    <title>Query By Country AND College</title>
+    <div>
+        <a href="http://127.0.0.1:5000/query" >NBA QUERY</a>
+    </div>
+</head>
+<body>
+    <h1>Query By Country AND College</h1>
+    {% for item in oggetto %}
+            <li>Id: {{ item.id }}</li>
+            <li>Player Name: {{ item.player_name }}</li>
+            <li>Team Abbreviation: {{ item.team_abbreviation }}</li>
+            <li>Age: {{ item.age }}</li>
+            <li>Player Height: {{ item.player_height }}</li>
+            <li>Player Weight: {{ item.player_weight }}</li>
+            <li>College: {{ item.college }}</li>
+            <li>Country: {{ item.country }}</li>
+            <li>Draft Year: {{ item.draft_year }}</li>
+            <li>Draft Round: {{ item.draft_round }}</li>
+            <li>Draft Number: {{ item.draft_number }}</li>
+            <li>GP: {{ item.gp }}</li>
+            <li>PTS: {{ item.pts }}</li>
+            <li>REB: {{ item.reb }}</li>
+            <li>Net Rating: {{ item.net_rating }}</li>
+            <li>OREB PCT: {{ item.oreb_pct }}</li>
+            <li>DREB PCT: {{ item.dreb_pct }}</li>
+            <li>USG PCT: {{ item.usg_pct }}</li>
+            <li>TS PCT: {{ item.ts_pct }}</li>
+            <li>AST PCT: {{ item.ast_pct }}</li>
+            <li>Season: {{ item.season }}</li>
+            <li>PST: {{ item.pst }}</li>
+        
+        <br>
+    {% endfor %}
+</body>
+</html>

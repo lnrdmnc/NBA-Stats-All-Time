@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA All Time</title>
+    <style>
+      /* Stili per il layout della pagina */
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+  
+      header {
+        background-color: #1b2d5e;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+  
+      nav {
+        background-color: #0c1c3d;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+      }
+  
+      nav a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+  
+      main {
+        padding: 20px;
+      }
+  
+      footer {
+        background-color: #0c1c3d;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+  
+      #root {
+        padding: 20px;
+      }
+  
+      h1, h2, h3 {
+        color: #1b2d5e;
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+  
+      li {
+        margin-bottom: 10px;
+      }
+  
+      button {
+        background-color: #1b2d5e;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+  
+      button:hover {
+        background-color: #0c1c3d;
+      }
+  
+      input[type="text"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  
+
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>NBA All Time</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="#">Players</a>
+        <a href="/query">Query</a>
+      </nav>
+
+   <!-- Sezione principale della pagina -->
+   <main>
+    <h2>NBA Query Page</h2>
+    <form id="queryForm">
+        <label>
+            Select Query:
+            <select id="queryType" onchange="showQueryForm()">
+                <option value="query_delete">Query Delete</option>
+                <option value="query_update_age">Query Update Age</option>
+                <option value="query_insert">Query Insert</option>
+                <option value="query_update_height_weight">Query Update Height Weight</option>
+                <option value="query_by_country_and_college">Query By Country and College</option> 
+                <option value="query_by_country_and_college_team">Query By Country College and Team</option>
+                <option value="query_by_ast_reb">Query Double Double</option>
+                <option value="query_by_ast_reb_pts">Query Triple Double</option>
+            </select>
+        </label>
+      </form> 
+      
+         
+      </div>
+            
+              <br/>
+              <div id="query_delete_form" style="display: none;">
+                  <h1>Cancellazione Oggetto</h1>
+                  <form action="/query_delete" method="post">
+                      <label for="id_oggetto">ID Oggetto che vuoi cancellare:</label>
+                      <input type="text" id="id_oggetto" name="id_oggetto" required><br><br>
+                      <button type="submit">Esegui Query</button>
+                  </form>
+               
+              </div>
+                <br/>
+                <div id="query_update_age_form" style="display: none;">
+                  <h1 >Digita il nome dell'oggetto di cui vuoi modificare gli anni</h1>
+                  <form action="/query_update_age" method="POST">
+                      <label for="nome_oggetto">Nome Oggetto:</label>
+                      <input type="text" id="nome_oggetto" name="nome_oggetto" required><br><br>
+                      
+                      <label for="nuovo_pts">Nuovi Anni:</label>
+                      <input type="number" id="nuovo_age" name="nuovo_age" required><br><br>
+                      
+                      <button type="submit">Esegui Query</button>
+                  </form>
+                </div>
+                <div id="query_insert_form" style="display: none;">
+                  <h1 >Inserisci un nuovo giocatore </h1>
+                  <form action="/query_insert" method="post">
+                    <label for="_id">ID:</label>
+                    <input type="number" id="id" name="id"  required><br><br>
+              
+                    <label for="player_name">Nome del giocatore:</label>
+                    <input type="text" id="player_name" name="player_name"  required><br><br>
+              
+                    <label for="team_abbreviation">Abbreviazione squadra:</label>
+                    <input type="text" id="team_abbreviation" name="team_abbreviation" required><br><br>
+              
+                    <label for="age">Età:</label>
+                    <input type="number" id="age" name="age" required><br><br>
+              
+                    <label for="player_height">Altezza giocatore:</label>
+                    <input type="number" id="player_height" name="player_height"  required><br><br>
+              
+                    <label for="player_weight">Peso giocatore:</label>
+                    <input type="number" id="player_weight" name="player_weight"  required><br><br>
+              
+                    <label for="college">College:</label>
+                    <input type="text" id="college" name="college"  required><br><br>
+              
+                    <label for="country">Paese:</label>
+                    <input type="text" id="country" name="country"  required><br><br>
+              
+                    <label for="draft_year">Anno draft:</label>
+                    <input type="number" id="draft_year" name="draft_year"  required><br><br>
+              
+                    <label for="draft_round">Turno draft:</label>
+                    <input type="number" id="draft_round" name="draft_round"  required><br><br>
+              
+                    <label for="draft_number">Numero draft:</label>
+                    <input type="number" id="draft_number" name="draft_number"  required><br><br>
+              
+                    <label for="gp">Partite giocate:</label>
+                    <input type="number" id="gp" name="gp"  required><br><br>
+              
+                    <label for="pts">Punti:</label>
+                    <input type="number" id="pts" name="pts"  step="0.1" required><br><br>
+              
+                    <label for="reb">Rimbalzi:</label>
+                    <input type="number" id="reb" name="reb"  step="0.1" required><br><br>
+              
+                    <label for="ast">Assist:</label>
+                    <input type="number" id="ast" name="ast"  step="0.1" required><br><br>
+              
+                    <label for="net_rating">Net Rating:</label>
+                    <input type="number" id="net_rating" name="net_rating"  step="0.1" required><br><br>
+              
+                    <label for="oreb_pct">OREB Percentage:</label>
+                    <input type="number" id="oreb_pct" name="oreb_pct"  step="0.001" required><br><br>
+              
+                    <label for="dreb_pct">DREB Percentage:</label>
+                    <input type="number" id="dreb_pct" name="dreb_pct"  step="0.001" required><br><br>
+              
+                    <label for="usg_pct">USG Percentage:</label>
+                    <input type="number" id="usg_pct" name="usg_pct"  step="0.001" required><br><br>
+              
+                    <label for="ts_pct">TS Percentage:</label>
+                    <input type="number" id="ts_pct" name="ts_pct"  step="0.001" required><br><br>
+              
+                    <label for="ast_pct">AST Percentage:</label>
+                    <input type="number" id="ast_pct" name="ast_pct"  step="0.001" required><br><br>
+              
+                    <label for="season">Stagione:</label>
+                    <input type="text" id="season" name="season"  required><br><br>
+              
+                    <label for="pst">PST:</label>
+                    <input type="text" id="pst" name="pst"  required><br><br>
+              
+                    <button type="submit">Esegui Query</button>
+                  </form>
+                </div>
+            
+          
+      </div>
+      <br />
+      <div id="query_update_height_weight_form" style="display: none;">
+        <h1 >Digita il nome dell'oggetto di cui vuoi modificare gli anni</h1>
+        <form action="/query_update_height_weight" method="POST">
+            <label for="nome_oggetto">Nome Oggetto:</label>
+            <input type="text" id="nome_oggetto" name="nome_oggetto" required><br><br>
+            
+            <label for="nuovo_height">Nuova Altezza:</label>
+            <input type="number" id="nuovo_height" name="nuovo_height" required><br><br>
+            <label for="nuovo_weight">Nuova Peso:</label>
+            <input type="number" id="nuovo_weight" name="nuovo_weight" required><br><br>
+            
+            <button type="submit">Esegui Query</button>
+        </form>
+      </div>
+      <div id="query_by_country_and_college_form" style="display: none;">
+          <h1>Cerca Giocatori per Nazione e College</h1>
+          <form action="/query_by_country_and_college" method="post">
+              <label for="country">Nazione da cercare:</label>
+              <input type="text" id="country" name="country"  required><br><br>
+              
+              <label for="college">College da cercare:</label>
+              <input type="text" id="college" name="college"  required><br><br>
+          
+            <button type="submit">Esegui Query</button>
+        </form>
+      </div>
+
+      <div id="query_by_country_and_college_team_form" style="display: none;">
+        <h1>Cerca Giocatori per Nazione,College e Team</h1>
+        <form action="/query_by_country_and_college_team" method="post">
+            <label for="country">Nazione da cercare:</label>
+            <input type="text" id="country" name="country"  required><br><br>
+            
+            <label for="college">College da cercare:</label>
+            <input type="text" id="college" name="college"  required><br><br>
+
+            <label for="team">Team da cercare:</label>
+            <input type="text" id="team" name="team"  required><br><br>
+        
+          <button type="submit">Esegui Query</button>
+      </form>
+    </div>
+
+    <div id="query_by_ast_reb_form" style="display: none;">
+      <h1>Cerca Giocatori per Assist e Rimbalzo</h1>
+      <form action="/query_by_ast_reb" method="post">
+      
+              
+        <label for="ast">Assist:</label>
+        <input type="number" id="ast" name="ast"  step="0.1" required><br><br>
+        
+        <label for="reb">Rimbalzi:</label>
+        <input type="number" id="reb" name="reb"  step="0.1" required><br><br>
+        <button type="submit">Esegui Query</button>
+    </form>
+  </div>
+
+  <div id="query_by_ast_reb_pts_form" style="display: none;">
+    <h1>Cerca Giocatori per Assist e Rimbalzo</h1>
+    <form action="/query_by_ast_reb_pts" method="post">
+    
+            
+      <label for="ast">Assist:</label>
+      <input type="number" id="ast" name="ast"  step="0.1" required><br><br>
+      
+      <label for="reb">Rimbalzi:</label>
+      <input type="number" id="reb" name="reb"  step="0.1" required><br><br>
+
+      <label for="pts">Punti:</label>
+      <input type="number" id="pts" name="pts"  step="0.1" required><br><br>
+      
+      <button type="submit">Esegui Query</button>
+  </form>
+</div>
+
+     <script>
+      var lastSelectedOption = null;
+  
+      function showQueryForm() {
+          // Nascondi l'ultima opzione selezionata
+          if (lastSelectedOption !== null) {
+              document.getElementById(lastSelectedOption + "_form").style.display = "none";
+          }
+  
+          // Mostra solo il form corrispondente all'opzione selezionata
+          var selectedQuery = document.getElementById("queryType").value;
+          document.getElementById(selectedQuery + "_form").style.display = "block";
+  
+          // Aggiorna l'ultima opzione selezionata
+          lastSelectedOption = selectedQuery;
+      }
+  </script>
+
+
+  <div id="queryResults"></div> 
+</main>
+
+
+
+ <!-- Footer -->
+ <footer>
+    <p>&copy; 2023 NBA Page. All rights reserved.</p>
+  </footer>
+
+  <!-- Script per il codice React -->
+  <script src=".static/query.js"></script>
+  <script src="./index.html"></script>
+</html>

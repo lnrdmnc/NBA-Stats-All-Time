@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBA All Time</title>
+  <style>
+    /* Stili per il layout della pagina */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1b2d5e;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #0c1c3d;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #0c1c3d;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #root {
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #1b2d5e;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #1b2d5e;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0c1c3d;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Query</h1>
+  </header>
+
+  <!-- Navigazione -->
+  <nav>
+    <a href="/">Home</a>
+    <a href="#">Players</a>
+    <a href="/query">Query</a>
+  </nav>
+
+  <!-- Sezione principale della pagina -->
+  <main>
+    <h2>Welcome to the NBA Page</h2>
+    <p>
+      This is a sample page dedicated to the National Basketball Association (NBA). You can use this page to display
+      information about players, teams, the schedule, and various statistics related to the NBA.
+    </p>
+    <p>
+      Feel free to customize and add more content to make this page your own!
+    </p>
+
+    <!-- Contenitore React dove viene visualizzata la lista dei giocatori e il form per aggiungere un giocatore -->
+    <div id="root"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 NBA Page. All rights reserved.</p>
+  </footer>
+
+  <!-- Script per il codice React -->
+  <script src="./static/query.js"></script>
+  <script src="./index.html"></script>
+</html>

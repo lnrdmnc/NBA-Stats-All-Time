@@ -20,12 +20,6 @@ Questo progetto è stato realizzato come parte del corso di Basi di Dati 2 utili
 
 Il progetto utilizza MongoDB come database per archiviare le statistiche NBA. Assicurarsi di avere MongoDB installato sul proprio sistema.
 
-## Struttura del Progetto
-
-...
-
-
-
 ## Installazione
 
 1. Clonare il repository sul proprio sistema locale:
@@ -35,13 +29,7 @@ Il progetto utilizza MongoDB come database per archiviare le statistiche NBA. As
     cd nba-stats-all-time
     ```
 
-2. Installare le dipendenze necessarie:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Eseguire l'applicazione:
+2. Eseguire l'applicazione:
 
     ```bash
     python app.py

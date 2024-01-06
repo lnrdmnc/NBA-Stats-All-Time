@@ -37,7 +37,9 @@ Il progetto utilizza MongoDB come database per archiviare le statistiche NBA. As
 
     La web app sarà disponibile all'indirizzo [http://localhost:5000](http://localhost:5000).
 
+## Dataset
 
+Il dataset utilizzato nel progetto è disponibile su Kaggle: [NBA Players Data](https://www.kaggle.com/datasets/justinas/nba-players-data).
 
 ## Autori
 -Leonardo Monaco(@lnrdmnc)

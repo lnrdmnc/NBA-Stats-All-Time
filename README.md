@@ -6,9 +6,8 @@ Questo progetto è stato realizzato come parte del corso di Basi di Dati 2 utili
 
 ## Caratteristiche Principali
 
-- **Interrogazione del Dataset**: La web app consente agli utenti di interrogare il dataset di statistiche NBA, fornendo informazioni dettagliate su giocatori, squadre e stagioni specifiche.
+- **Interrogazione del Dataset**: La web app consente agli utenti di interrogare il dataset di statistiche NBA.
 
-- **Visualizzazioni Interattive**: Sono state implementate visualizzazioni interattive per rendere più comprensibili le statistiche, inclusi grafici e tabelle dinamiche.
 
 - **Flask e Python**: Il backend è stato sviluppato utilizzando Flask, un framework leggero per Python, garantendo una gestione efficiente delle richieste HTTP.
 
